@@ -25,6 +25,7 @@ public class JavaTypes {
         char c = '!';            // '\u0000' = int 0 - '\uffff' = int 65535 (16 bit)
         char c2 = 87;
 
+
         // Logical
         boolean tb = true;
         boolean fb = false;
