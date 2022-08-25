@@ -12,6 +12,11 @@ public class Note {
     private Date createdDate;
     private String description;
     private String signature;
+    private static int counter = 0;
+
+    public Note() {
+        counter++;
+    }
 
     public Note(String name, Date createdDate, String description, String signature) {
         this.name = name;
@@ -50,6 +55,10 @@ public class Note {
 
     public void setSignature(String signature) {
         this.signature = signature;
+    }
+
+    public void greeting() {
+        System.out.println("Say hello " + counter);
     }
 
     @Override
