@@ -30,7 +30,7 @@ public class Runner {
             description = scanner.nextLine();
             System.out.println("¬ведите подпись " + (i + 1));
             signature = scanner.nextLine();
-            array[i] = createNote(name, new Date(), description, signature);
+            array[i] = createNote(name, description, signature);
         }
     }
 
@@ -43,11 +43,11 @@ public class Runner {
         description = scanner.nextLine();
         System.out.println("¬ведите подпись ");
         signature = scanner.nextLine();
-        array[index - 1] = createNote(name, new Date(), description, signature);
+        array[index - 1] = createNote(name, description, signature);
     }
 
-    private static Note createNote(String name, Date createdDate, String description, String signature) {
-        return new Note(name, createdDate, description, signature);
+    private static Note createNote(String name,String description, String signature) {
+        return new Note(name, new Date(), description, signature);
     }
 
     private static void printArray(Note[] array) {

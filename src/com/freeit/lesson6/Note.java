@@ -18,6 +18,13 @@ public class Note {
         counter++;
     }
 
+    public Note(String name, String description, String signature) {
+        this.name = name;
+        this.createdDate = new Date();
+        this.description = description;
+        this.signature = signature;
+    }
+
     public Note(String name, Date createdDate, String description, String signature) {
         this.name = name;
         this.createdDate = createdDate;
