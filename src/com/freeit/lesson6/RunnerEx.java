@@ -11,11 +11,7 @@ public class RunnerEx {
 
     public static void main(String[] args) {
 
-        Note note = new Note();
-
-        Note note1 = new Note("name", new Date(), "description", "signature");
-
-        Note note2 = new Note("name", "description", "signature");
+        Person person = new Person("Jack", 15, false, false, true);
 
     }
 }
