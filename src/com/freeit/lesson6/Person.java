@@ -17,16 +17,16 @@ public class Person {
         this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public Person(String name, int age, boolean canSpeak, boolean canWalk, boolean canSee) {
         this.name = name;
         this.age = age;
         this.canSpeak = canSpeak;
         this.canWalk = canWalk;
         this.canSee = canSee;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
