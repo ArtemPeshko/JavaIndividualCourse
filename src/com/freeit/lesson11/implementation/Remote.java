@@ -11,6 +11,10 @@ public interface Remote {
 
     void turnOff();
 
+    default void sayHello() {
+        System.out.println("Method not override");
+    }
+
 //    default void chooseDimension() {
 //        System.out.println("default choosing dimension");
 //    }

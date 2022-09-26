@@ -5,10 +5,9 @@ package com.freeit.lesson11.implementation;
  * E-Mail artem.peshko@alseda.by
  * E-Mail artem.peshko@gmail.com
  */
-public class LgTvRemote extends TvRemote implements Remote, MagicRemote {
+public class LgTvRemote extends TvRemote implements MagicRemote{
 
     private String model;
-
 
     public String getModel() {
         return model;
@@ -44,8 +43,13 @@ public class LgTvRemote extends TvRemote implements Remote, MagicRemote {
     }
 
     @Override
+    public void sayHello() {
+        System.out.println("method override");
+    }
+
+    @Override
     public void showCursor() {
-        System.out.println("LG TV showing current cursor position");
+        System.out.println("cursor");
     }
 
 //    @Override
