@@ -1,6 +1,7 @@
 package com.freeit.lesson6;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * Created by Artem Peshko on 22.08.2022
@@ -16,6 +17,10 @@ public class Note {
 
     public Note() {
         counter++;
+    }
+
+    public Note(String name) {
+        this.name = name;
     }
 
     public Note(String name, String description, String signature) {
@@ -76,5 +81,21 @@ public class Note {
                 ", description='" + description + '\'' +
                 ", signature='" + signature + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Note note = (Note) o;
+        return Objects.equals(name, note.name) &&
+                Objects.equals(createdDate, note.createdDate) &&
+                Objects.equals(description, note.description) &&
+                Objects.equals(signature, note.signature);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, createdDate, description, signature);
     }
 }
