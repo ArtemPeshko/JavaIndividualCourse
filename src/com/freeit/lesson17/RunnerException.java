@@ -1,5 +1,6 @@
 package com.freeit.lesson17;
 
+import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
 /**
@@ -28,10 +29,13 @@ public class RunnerException {
         int delimiter = new Scanner(System.in).nextInt();
         int rate = 100;
 
-        try {
+        try (ByteArrayInputStream inputStream = new ByteArrayInputStream(new byte[10])){
             delimiter(rate, delimiter);
-        } catch (IllegalArgumentException | ZeroException | ArithmeticException e) {
+        } catch (ZeroException | ArithmeticException e) {
             System.out.println("Ты дурак делить на 0? " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ты дурак делить на 0? " + e.getMessage());
+            e.printStackTrace();
         } catch (Exception e) {
             System.out.println("Что-то пошло не так: " + e.getMessage());
             e.printStackTrace();
@@ -51,16 +55,25 @@ public class RunnerException {
         System.out.println("Программа выполнилась успешно");
     }
 
-    private static void delimiter(int rate, int delimiter) throws InterruptedException, ZeroException {
+    private static void delimiter(int rate, int delimiter) throws ZeroException {
 //        for (int i = 5; i >= 1; i--) {
 //            Thread.sleep(800);
 //            System.out.println("До подсчета резултата осталось " + i);
 //        }
+       // delimiter2(rate, delimiter);
 //        if (delimiter == 0) {
 //            throw new ZeroException("You divider is equal to zero. Please choose another one gr than 0");
 //        }
         System.out.println("Ваш полезный коофициент = " + (rate / delimiter));
     }
+
+
+
+//    private static void delimiter2(int rate, int delimiter) throws ZeroException {
+//        if (delimiter == 0) {
+//            throw new ZeroException("You divider is equal to zero. Please choose another one gr than 0");
+//        }
+//    }
 //    public static void main(String[] args) {
 //        int[] array = new int[5];
 //        Thread thread = new Thread(() -> {
